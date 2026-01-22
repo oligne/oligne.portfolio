@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Home</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      box-sizing: border-box;
+    }
+    body {
+      min-height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      position: relative;
+    }
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 56px;
+      background: none;
+      border: none;
+      box-shadow: none;
+      display: flex;
+      align-items: center;
+      padding: 0 36px;
+      margin: 0;
+      z-index: 10; /* header au-dessus du graph, sous les fenêtres */
+      font-family: 'Menlo', monospace;
+    }
+    nav a {
+      color: #222;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 600;
+      margin-right: 32px;
+      letter-spacing: 0.5px;
+      transition: color 0.18s;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+    }
+    nav a:hover {
+      color: #1a4b8a;
+      border-bottom: 2px solid #1a4b8a;
+    }
+    main {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+    #graph3d {
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    #home-animated-row {
+      position: fixed;
+      top: 68px;
+      left: 0;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 20;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="work.html">WORK</a>
+    <img src="../assets/oligne.png" alt="oligne" style="height:42px;margin:0 32px;vertical-align:middle;display:inline-block;">
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+  <div id="home-animated-row">
+    <div id="home-static-text"></div>
+    <div id="home-animated-text"></div>
+  </div>
+  <main>
+    <div id="graph3d"></div>
+  </main>
+  <script src="https://unpkg.com/three@0.149.0/build/three.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/3d-force-graph"></script>
+  <script>
+
+  </script>
+  <script src="../main.js" type="module"></script>
+  <script src="../home_animated_text.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Force Graph Basic</title>
+  <style>body { margin: 0; }</style>
+  <script src="//cdn.jsdelivr.net/npm/3d-force-graph"></script>
+</head>
+<body>
+  <div id="3d-graph" style="width:100vw;height:100vh;"></div>
+  <script>
+    // Random tree
+    const N = 300;
+    const gData = {
+      nodes: [...Array(N).keys()].map(i => ({ id: i })),
+      links: [...Array(N).keys()]
+        .filter(id => id)
+        .map(id => ({
+          source: id,
+          target: Math.round(Math.random() * (id-1))
+        }))
+    };
+    const Graph = ForceGraph3D()(document.getElementById('3d-graph'))
+      .graphData(gData)
+      .d3Force('charge', d3.forceManyBody().strength(-80)) // plus de répulsion globale
+      .d3Force('center', d3.forceCenter(0, 0, 0))
+      .d3VelocityDecay(0.5)
+      .d3AlphaDecay(0.03)
+      .d3Force('link', d3.forceLink(gData.links).id(d => d.id).distance(60).strength(1));
+  </script>
+</body>
+</html>

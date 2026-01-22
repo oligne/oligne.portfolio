@@ -1,0 +1,85 @@
+{
+  "nodes": [
+    { "id": "espace", "type": "theme", "size": 25 },
+    { "id": "fa studio", "type": "theme", "size": 18 },
+    { "id": "collectif scale", "type": "theme", "size": 22 },
+    { "id": "digital craft", "type": "theme", "size": 25 },
+    { "id": "web", "type": "theme", "size": 22 },
+    { "id": "CGI", "type": "theme", "size": 22 },
+    { "id": "Objet", "type": "theme", "size": 18 },
+
+
+    { "id": "Itinera Senssum", "type": "projet", "parent": "espace", "size": 70, "info": "Finaliste du Prix Jeune Création 2024.", "highlight_phrases": [1,5] },
+    { "id": "Sortir du Cadre", "type": "projet", "parent": "espace", "size": 70, "info": "Projet d'installation immersive.", "highlight_phrases": [1]},
+    { "id": "Petite Ceinture", "type": "projet", "parent": "espace", "size": 60, "info": "Exploration urbaine sur la Petite Ceinture.", "highlight_phrases": [4] },
+    { "id": "La chambre", "type": "projet", "parent": "espace", "size": 60, "info": "Installation sonore et visuelle.", "highlight_phrases": [2, 3, 4] },
+    { "id": "Basis", "type": "projet", "parent": "espace", "size": 60, "info": "Projet collaboratif avec fa studio.", "highlight_phrases": [1] },
+    { "id": "Mister Garden", "type": "projet", "parent": "espace", "size": 40, "info": "Jardin interactif numérique.", "highlight_phrases": [] },
+    { "id": "Murmur", "type": "projet", "parent": "espace", "size": 40, "info": "Installation sonore participative.", "highlight_phrases": [] },
+
+
+    { "id": "Toron", "type": "projet", "parent": "collectif scale", "size": 60, "info": "Sculpture textile expérimentale.", "highlight_phrases": []},
+    { "id": "Figure", "type": "projet", "parent": "collectif scale", "size": 60, "info": "Recherche sur la forme et la matière.", "highlight_phrases": [2] },
+    { "id": "Flux x Hand", "type": "projet", "parent": "collectif scale", "size": 50, "info": "Performance interactive.", "highlight_phrases": [2, 3]},
+
+    { "id": "Pulsar", "type": "projet", "parent": "web", "size": 60, "info": "Web-art génératif.", "highlight_phrases": [4] },
+    { "id": "Datavi(e)z 1", "type": "projet", "parent": "web", "size": 60, "info": "Dataviz sur la vie quotidienne.", "highlight_phrases": [4] },
+    { "id": "Datavi(e)z 2", "type": "projet", "parent": "web", "size": 50, "info": "Suite du projet Datavi(e)z 1.", "highlight_phrases": [] },
+    { "id": "W.E.B", "type": "projet", "parent": "web", "size": 50, "info": "Expérience web immersive.", "highlight_phrases": [4] },
+    { "id": "Casette", "type": "projet", "parent": "CGI", "size": 50, "info": "Animation 3D d'une cassette audio.", "highlight_phrases": [] },
+    { "id": "B612", "type": "projet", "parent": "CGI", "size": 50, "info": "Projet inspiré du Petit Prince.", "highlight_phrases": [] },
+    { "id": "Fleurs", "type": "projet", "parent": "CGI", "size": 40, "info": "Étude florale en CGI.", "highlight_phrases": [] },
+    { "id": "Luma", "type": "projet", "parent": "CGI", "size": 40, "info": "Expérimentation lumière et matière.", "highlight_phrases": [] },
+
+
+    { "id": "Porte Clé", "type": "projet", "parent": "Objet", "size": 40, "info": "Objet design fonctionnel.", "highlight_phrases": [] },
+    { "id": "Square", "type": "projet", "parent": "Objet", "size": 40, "info": "Projet de design géométrique.", "highlight_phrases": [5] }
+
+  ],
+  "links": [
+    { "source": "espace", "target": "fa studio", "type": "theme-link" },
+    { "source": "espace", "target": "collectif scale", "type": "theme-link" },
+    { "source": "espace", "target": "digital craft", "type": "theme-link" },
+    { "source": "espace", "target": "Objet", "type": "theme-link" },
+
+    { "source": "digital craft", "target": "web", "type": "theme-link" },
+    { "source": "digital craft", "target": "CGI", "type": "theme-link" },
+    { "source": "digital craft", "target": "Objet", "type": "theme-link" },
+    { "source": "digital craft", "target": "collectif scale", "type": "theme-link" },
+    { "source": "espace", "target": "digital craft", "type": "theme-link" },
+
+    { "source": "Itinera Senssum", "target": "espace", "type": "invisible-link" },
+    { "source": "Sortir du Cadre", "target": "espace", "type": "invisible-link" },
+    { "source": "Petite Ceinture", "target": "espace", "type": "invisible-link" },
+    { "source": "La chambre", "target": "espace", "type": "invisible-link" },
+    { "source": "Basis", "target": "fa studio", "type": "invisible-link" },
+    { "source": "Mister Garden", "target": "fa studio", "type": "invisible-link" },
+    { "source": "Murmur", "target": "fa studio", "type": "invisible-link" },
+
+    { "source": "La chambre", "target": "digital craft", "type": "invisible-link" },
+
+
+    { "source": "Basis", "target": "Mister Garden", "type": "near" },
+    { "source": "Mister Garden", "target": "Murmur", "type": "near" },
+    { "source": "Murmur", "target": "Basis", "type": "near" },
+
+        { "source": "Datavi(e)z 1", "target": "Datavi(e)z 2", "type": "near" },
+
+    { "source": "Sortir du Cadre", "target": "Petite Ceinture", "type": "near" },
+
+
+    { "source": "Porte Clé", "target": "Objet", "type": "invisible-link" },
+    { "source": "Square", "target": "Objet", "type": "invisible-link" },
+    { "source": "Toron", "target": "collectif scale", "type": "invisible-link" },
+    { "source": "Figure", "target": "collectif scale", "type": "invisible-link" },
+    { "source": "Flux x Hand", "target": "collectif scale", "type": "invisible-link" },
+    { "source": "Pulsar", "target": "web", "type": "invisible-link" },
+    { "source": "Datavi(e)z 1", "target": "web", "type": "invisible-link" },
+    { "source": "Datavi(e)z 2", "target": "web", "type": "invisible-link" },
+    { "source": "W.E.B", "target": "web", "type": "invisible-link" },
+    { "source": "Casette", "target": "CGI", "type": "invisible-link" },
+    { "source": "B612", "target": "CGI", "type": "invisible-link" },
+    { "source": "Fleurs", "target": "CGI", "type": "invisible-link" },
+    { "source": "Luma", "target": "CGI", "type": "invisible-link" }
+    ]
+}
