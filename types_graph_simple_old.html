@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Graph Types Simple</title>
+  <style>body { margin: 0; }</style>
+  <script src="//cdn.jsdelivr.net/npm/3d-force-graph"></script>
+</head>
+<body>
+  <div id="3d-graph" style="width:100vw; height:100vh; background:#fff;"></div>
+  <script>
+    fetch('assets/types_graph.json')
+      .then(r => r.json())
+      .then(data => {
+        const Graph = ForceGraph3D()(document.getElementById('3d-graph'))
+          .graphData(data)
+          .backgroundColor('#fff')
+          .nodeLabel('id')
+          .nodeAutoColorBy('type')
+          .linkColor(() => '#2196f3')
+          .linkWidth(0.6)
+          .linkOpacity(1)
+          .nodeThreeObject(node => {
+            const faceSize = 120;
+            const canvas = document.createElement('canvas');
+            canvas.width = 1200;
+            canvas.height = 200;
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(faceSize / 2, faceSize / 2, faceSize / 2, 0, 2 * Math.PI);
+            ctx.fillStyle = '#111';
+            ctx.globalAlpha = 1;
+            ctx.fill();
+            ctx.restore();
+            let fontSize = 160;
+            const label = node.id;
+            ctx.font = `bold ${fontSize}px Menlo, monospace`;
+            let textWidth = ctx.measureText(label).width;
+            while (textWidth > 1050 && fontSize > 24) {
+              fontSize -= 2;
+              ctx.font = `bold ${fontSize}px Menlo, monospace`;
+              textWidth = ctx.measureText(label).width;
+            }
+            ctx.fillStyle = '#111';
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(label, faceSize + 30, faceSize / 2);
+            const texture = new THREE.CanvasTexture(canvas);
+            const material = new THREE.SpriteMaterial({map: texture});
+            material.transparent = true;
+            material.alphaTest = 0.05;
+            const sprite = new THREE.Sprite(material);
+            sprite.scale.set(80, 12, 1);
+            sprite.center.set((faceSize/2)/canvas.width, (faceSize/2 + 40)/canvas.height);
+            return sprite;
+          });
+      });
+  </script>
+</body>
+</html>
